@@ -1,0 +1,6 @@
+foo.name: Jan
+
+foo:
+    list:
+        - foo
+        - bar
