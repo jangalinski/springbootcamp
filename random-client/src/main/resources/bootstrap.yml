@@ -1,0 +1,2 @@
+spring.application.name: random-client
+server.port: 0

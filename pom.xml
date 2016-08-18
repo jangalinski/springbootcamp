@@ -19,6 +19,8 @@
     <module>spikes</module>
     <module>discovery-service</module>
     <module>discovery-client</module>
+    <module>random-service</module>
+    <module>random-client</module>
   </modules>
 
   <properties>
