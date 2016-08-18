@@ -1,4 +1,4 @@
-package io.github.jangalinski.playground.clock;
+package com.github.jangalinski.springboot.clock;
 
 import com.vaadin.annotations.Push;
 import com.vaadin.server.VaadinRequest;

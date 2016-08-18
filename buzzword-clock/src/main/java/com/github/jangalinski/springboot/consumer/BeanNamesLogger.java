@@ -1,4 +1,4 @@
-package io.github.jangalinski.playground.consumer;
+package com.github.jangalinski.springboot.consumer;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

@@ -1,4 +1,4 @@
-package io.github.jangalinski.playground.controller;
+package com.github.jangalinski.springboot.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,8 +1,8 @@
-package io.github.jangalinski.playground;
+package com.github.jangalinski.springboot;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-import io.github.jangalinski.playground.consumer.BeanNamesLogger;
+import com.github.jangalinski.springboot.consumer.BeanNamesLogger;
 import org.slf4j.Logger;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.CommandLineRunner;

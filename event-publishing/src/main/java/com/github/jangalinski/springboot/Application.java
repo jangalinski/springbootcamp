@@ -1,21 +1,19 @@
-package com.github.jangalinski;
+package com.github.jangalinski.springboot;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.Ordered;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
 
-
-public class MainApplication implements CommandLineRunner, Ordered {
+@SpringBootApplication
+public class Application implements CommandLineRunner, Ordered {
 
     private static final int ORDER = 10;
     private final Logger logger = getLogger(this.getClass());

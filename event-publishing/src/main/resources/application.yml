@@ -1,0 +1,9 @@
+foo.name: Jan
+
+foo:
+    list:
+        - foo
+        - bar
+
+server:
+  port: 9090
