@@ -1,0 +1,14 @@
+spring.application.name: discovery-service
+server.port: ${EUREKA_PORT:8761}
+
+eureka:
+  # we are the server, so we do not register ourselves
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+spring.logging:
+  level:
+    com.netflix:
+      eureka: OFF
+      discovery: OFF
