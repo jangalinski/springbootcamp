@@ -6,9 +6,12 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+  server:
+    enable-self-preservation: false
 
 spring.logging:
   level:
     com.netflix:
       eureka: OFF
       discovery: OFF
+

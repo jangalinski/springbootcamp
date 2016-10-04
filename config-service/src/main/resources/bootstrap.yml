@@ -1,0 +1,14 @@
+spring.application.name: configserver
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      discovery:
+        service-id: ${spring.application.name}
+        enabled: true
+      server:
+        native:
+          search-locations: classpath:/configuration
+  profiles:
+    active: native
