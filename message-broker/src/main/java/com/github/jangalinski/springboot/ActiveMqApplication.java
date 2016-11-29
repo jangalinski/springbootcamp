@@ -2,13 +2,18 @@ package com.github.jangalinski.springboot;
 
 import javax.jms.ConnectionFactory;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.style.ToStringCreator;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
@@ -25,7 +30,7 @@ import lombok.extern.slf4j.Slf4j;
 @SpringBootApplication
 @EnableJms
 @Slf4j
-public class ActiveMqApplication implements CommandLineRunner {
+public class ActiveMqApplication implements ApplicationRunner {
 
   public static void main(String[] args) {
     SpringApplication.run(ActiveMqApplication.class, args);
@@ -41,9 +46,13 @@ public class ActiveMqApplication implements CommandLineRunner {
     return factory;
   }
 
-  @Bean // Serialize message content to json using TextMessage
+  /**
+   * Serialize message content to json using TextMessage
+   * @return messageConverter
+   */
+  @Bean
   public MessageConverter jacksonJmsMessageConverter() {
-    MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
+    final MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
     converter.setTargetType(MessageType.TEXT);
     converter.setTypeIdPropertyName("_type");
 
@@ -54,7 +63,8 @@ public class ActiveMqApplication implements CommandLineRunner {
   private JmsTemplate jmsTemplate;
 
   @Override
-  public void run(String... args) throws Exception {
+  public void run(final ApplicationArguments args) throws Exception {
+    log.info("args={}", ToStringBuilder.reflectionToString(args, ToStringStyle.SHORT_PREFIX_STYLE));
     // Send a message with a POJO - the template reuse the message converter
     log.info("Sending an email message.");
     jmsTemplate.convertAndSend("mailbox", new Email("info@example.com", "Hello"));

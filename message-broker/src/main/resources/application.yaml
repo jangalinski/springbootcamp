@@ -1,2 +1,7 @@
-spring.application.name: message-broker
-server.port: 0
+spring:
+  application:
+    name: message-broker
+  profiles:
+    active: default
+server:
+  port: 0
