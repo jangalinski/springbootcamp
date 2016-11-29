@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.4.0.RELEASE</version>
+    <version>1.4.2.RELEASE</version>
     <relativePath/>
   </parent>
 
@@ -22,6 +22,7 @@
     <module>random-service</module>
     <module>random-client</module>
     <module>config-service</module>
+    <module>message-broker</module>
   </modules>
 
   <properties>
@@ -29,6 +30,7 @@
     <java.version>1.8</java.version>
 
     <vaadin.version>7.6.8</vaadin.version>
+    <lombok.version>1.16.10</lombok.version>
     <spring-cloud.version>Brixton.SR4</spring-cloud.version>
   </properties>
 
@@ -57,9 +59,17 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
     </dependency>
+
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
